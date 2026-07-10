@@ -125,27 +125,51 @@
   }
 
   /* ---------------------------------------------------------------- projects */
+  function orderedCategories() {
+    const present = Array.from(new Set(P.projects.map((p) => p.category)));
+    const order = P.projectCategoryOrder || [];
+    const ranked = order.filter((c) => present.includes(c));
+    const rest = present.filter((c) => !ranked.includes(c));
+    return ranked.concat(rest);
+  }
+
   function renderProjects() {
-    const cats = ["All", ...Array.from(new Set(P.projects.map((p) => p.category)))];
+    const cats = orderedCategories();
+    const rank = {};
+    cats.forEach((c, i) => (rank[c] = i));
+
     const filterBar = $("#projectFilters");
-    cats.forEach((c, i) => {
+    ["All", ...cats].forEach((c, i) => {
       const b = el("button", "filter-btn" + (i === 0 ? " active" : ""), c);
       b.dataset.cat = c;
       b.addEventListener("click", () => applyFilter(c, b));
       filterBar.appendChild(b);
     });
 
+    // Render projects grouped by the same category order (stable within a group).
     const grid = $("#projectGrid");
-    P.projects.forEach((p) => {
+    const sorted = P.projects
+      .map((p, i) => ({ p, i }))
+      .sort((a, b) => (rank[a.p.category] - rank[b.p.category]) || (a.i - b.i))
+      .map((x) => x.p);
+
+    sorted.forEach((p) => {
       const card = el("div", "project-card");
       card.setAttribute("data-reveal", "");
       card.dataset.cat = p.category;
       card.appendChild(el("div", "project-cat", p.category));
       card.appendChild(el("h4", null, p.title));
+      if (p.client) card.appendChild(el("div", "project-client", "🏢 " + p.client));
+      if (p.role) card.appendChild(el("div", "project-role", "👤 " + p.role));
       card.appendChild(el("p", null, p.text));
       const tags = el("div", "project-tags");
       p.tags.forEach((t) => tags.appendChild(el("span", null, t)));
       card.appendChild(tags);
+      if (p.link) {
+        const a = el("a", "project-link", "View Project ↗");
+        a.href = p.link; a.target = "_blank"; a.rel = "noopener";
+        card.appendChild(a);
+      }
       grid.appendChild(card);
     });
   }

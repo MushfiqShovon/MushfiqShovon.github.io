@@ -169,28 +169,129 @@ const PORTFOLIO = {
       tags: ["Brevitas", "LSTM", "ONNX", "PyTorch"]
     },
     {
+      title: "Ball Bearing Defect Detection on Qualcomm Edge",
+      category: "Research",
+      text: "Real-time ball-bearing defect detection deployed on a Qualcomm edge device, demonstrating on-device inference for industrial condition monitoring.",
+      link: "https://mushfiqshovon.github.io/BallBearingDefect_qcomm_edge/",
+      tags: ["Edge AI", "Qualcomm", "Anomaly Detection", "Condition Monitoring"]
+    },
+    {
+      title: "Domain Adaptation of SAM for Industrial XCT Defect Segmentation",
+      category: "Research",
+      text: "Adapting the Segment Anything Model (SAM) to the industrial X-ray computed tomography (XCT) domain for automated pore and defect segmentation in additive-manufactured parts.",
+      tags: ["SAM", "Domain Adaptation", "XCT", "Segmentation"]
+    },
+    {
       title: "Non-invasive Hemoglobin Measurement",
       category: "Biomedical",
       text: "Handheld goggle prototype with an integrated camera that captures conjunctiva images and estimates blood hemoglobin using an image-processing correlation model. ~94% accuracy across 30 participants.",
       tags: ["Image Processing", "Prototype", "Biomedical"]
     },
     {
+      title: "Robo Nurse",
+      category: "Biomedical",
+      text: "Assistive robotic nurse prototype designed to support routine patient-care tasks such as delivering items and monitoring, reducing the load on hospital staff.",
+      tags: ["Assistive Robotics", "Healthcare", "Embedded"]
+    },
+    {
+      title: "Low-cost Ultrasonic Eye for the Blind",
+      category: "Biomedical",
+      text: "Wearable ultrasonic obstacle-detection aid that alerts visually impaired users to nearby objects through vibration/sound feedback, built with low-cost components.",
+      tags: ["Ultrasonic", "Assistive Tech", "Wearable"]
+    },
+    {
+      title: "Energy Monitoring & Reporting System",
+      category: "Industrial Automation",
+      client: "Unilever Bangladesh Ltd.",
+      text: "Plant-wide energy monitoring and reporting system on a local data server, giving live visibility into electricity, gas, water, and steam consumption to drive cost optimization.",
+      tags: ["Energy Monitoring", "SCADA", "SQL Server", "Industry 4.0"]
+    },
+    {
       title: "Digital Factory Operating System (DFOS)",
       category: "Industrial Automation",
-      text: "OPC/Azure-based line-efficiency management system for packing lines at Unilever, integrating shop-floor data with the cloud for real-time performance monitoring.",
+      client: "Unilever Bangladesh Ltd.",
+      text: "OPC/Azure-based line-efficiency management system for packing lines, integrating shop-floor data with the cloud for real-time performance monitoring.",
       tags: ["OPC", "Azure", "Industry 4.0", "SCADA"]
     },
     {
-      title: "Statistical Process Control App",
+      title: "Utility Plant Monitoring System",
       category: "Industrial Automation",
-      text: "SQL Server + SSRS statistical process control dashboards for process lines, giving operators live SPC visibility and reporting.",
+      client: "Unilever Bangladesh Ltd.",
+      text: "Web-based monitoring and reporting system for utility assets — generators, chillers, compressors, water treatment plant, and boilers — using SCADA and SQL Server.",
+      tags: ["SCADA", "SQL Server", "Utilities", "Web Dashboard"]
+    },
+    {
+      title: "Soap Manufacturing Line Automation",
+      category: "Industrial Automation",
+      client: "Unilever Bangladesh Ltd.",
+      text: "PLC and SCADA-based automation for the soap manufacturing line, improving process control, reliability, and line efficiency.",
+      tags: ["PLC", "SCADA", "Allen-Bradley", "Process Control"]
+    },
+    {
+      title: "Statistical Process Control (SPC)",
+      category: "Industrial Automation",
+      client: "Unilever Bangladesh Ltd.",
+      text: "SQL Server + SSRS statistical process control dashboards for process lines, giving operators live SPC visibility and automated reporting.",
       tags: ["SQL Server", "SSRS", "SPC"]
+    },
+    {
+      title: "Central Automation System Backbone",
+      category: "Industrial Automation",
+      client: "Unilever Bangladesh Ltd.",
+      text: "Designed the complete physical network backbone (Central Automation System) that enabled Industry 4.0 connectivity across the plant floor.",
+      tags: ["Networking", "Industry 4.0", "Infrastructure", "OPC"]
+    },
+    {
+      title: "Resin Plant Automation",
+      category: "Industrial Automation",
+      client: "Berger Paints",
+      role: "Project Manager, PLC & SCADA Programmer",
+      text: "End-to-end automation of a resin manufacturing plant, from control design through PLC/SCADA programming, installation, and commissioning.",
+      tags: ["PLC", "SCADA", "Batch Process", "Project Management"]
     },
     {
       title: "132 kV / 33 kV Substation SCADA",
       category: "Industrial Automation",
-      text: "SCADA design and implementation for a high-voltage substation at KYCR Steel Mill as project lead and programmer.",
-      tags: ["SCADA", "Power Systems", "PLC"]
+      client: "KYCR Steel Mill, KDS Group",
+      role: "Project Manager, PLC & SCADA Programmer",
+      text: "SCADA design and implementation for a high-voltage 132 kV/33 kV substation, delivered as project lead and programmer.",
+      tags: ["SCADA", "Power Systems", "PLC", "High Voltage"]
+    },
+    {
+      title: "Substation ACB Interlock System",
+      category: "Industrial Automation",
+      client: "Nestlé Bangladesh (Sreepur Plant)",
+      role: "Programmer & Electrical Designer",
+      text: "Designed and programmed an Air Circuit Breaker (ACB) interlock system to enforce safe switching sequences at the substation.",
+      tags: ["ACB Interlock", "Electrical Design", "Substation", "Safety"]
+    },
+    {
+      title: "Automatic Electroplating Machine Servicing",
+      category: "Industrial Automation",
+      client: "KDS Steel Accessories",
+      text: "Servicing, troubleshooting, and control-system restoration of an automatic electroplating machine to return it to production.",
+      tags: ["PLC", "Servicing", "Electroplating"]
+    },
+    {
+      title: "Heat Sealing Machine Automation Servicing",
+      category: "Industrial Automation",
+      client: "Rahimafrooz Ltd.",
+      text: "Automation servicing and control repair of a heat sealing machine, restoring reliable sealing operation on the line.",
+      tags: ["Automation", "Servicing", "HMI"]
+    },
+    {
+      title: "VFD Installation & Commissioning — Chiller Unit",
+      category: "Industrial Automation",
+      client: "Unilever (Kalurghat Plant)",
+      text: "Installation and commissioning of variable frequency drives on a chiller unit to improve energy efficiency and process control.",
+      tags: ["VFD", "Chiller", "Commissioning", "Energy Efficiency"]
+    },
+    {
+      title: "Pump Station Automation",
+      category: "Industrial Automation",
+      client: "Dhaka WASA (Pilot Project)",
+      text: "Pilot pump-station automation for the Dhaka Water Supply and Sewerage Authority, covering control logic, PLC/SCADA, and commissioning.",
+      tags: ["PLC", "SCADA", "Pump Station", "Water Utility"]
     },
     {
       title: "Non-invasive Jaundice Detection",
@@ -205,20 +306,32 @@ const PORTFOLIO = {
       tags: ["ECG", "Biomedical", "Instrumentation"]
     },
     {
-      title: "Bi-pedal & Quad-rotor Robots",
-      category: "Robotics",
-      text: "Six-DOF servo-based bi-pedal robot and a GPS-tracked quad-rotor flying robot, among a range of obstacle-detecting and maze-solving robots.",
-      tags: ["Robotics", "Servo", "GPS", "Arduino"]
-    },
-    {
-      title: "Biometric Electronic Voting Machine",
-      category: "Robotics",
-      text: "Electronic voting machine combining biometric fingerprint recognition with RFID, alongside RFID library automation and other embedded systems.",
+      title: "Electronic Voting Machine",
+      category: "Embedded Systems & Robotics",
+      text: "Electronic voting machine combining biometric fingerprint recognition with RFID for secure, tamper-resistant voter authentication and vote counting.",
       tags: ["RFID", "Biometrics", "Microcontroller"]
     },
     {
+      title: "Automatic Solar Tracker with Real Time Clock",
+      category: "Embedded Systems & Robotics",
+      text: "Sunlight-tracking solar panel that follows the sun using a real-time clock and light sensing to maximize daily energy harvest.",
+      tags: ["Solar", "RTC", "Sensors", "Microcontroller"]
+    },
+    {
+      title: "Library Automation with RFID System",
+      category: "Embedded Systems & Robotics",
+      text: "RFID-based library automation for issuing, returning, and tracking books, replacing manual logging with tap-to-scan operation.",
+      tags: ["RFID", "Automation", "Embedded"]
+    },
+    {
+      title: "Automatic Electric Billing System with GSM Technology",
+      category: "Embedded Systems & Robotics",
+      text: "Automatic electricity billing system that reads consumption and sends bills/alerts to users over GSM, removing the need for manual meter reading.",
+      tags: ["GSM", "Metering", "IoT", "Microcontroller"]
+    },
+    {
       title: "Tele-operated Robotic Hand",
-      category: "Robotics",
+      category: "Embedded Systems & Robotics",
       text: "Tele-operated robotic hand mirroring human hand movement using gyroscope sensing, presented at ICMERE 2016.",
       tags: ["Robotics", "Gyro", "Tele-operation"]
     },
@@ -228,6 +341,15 @@ const PORTFOLIO = {
       text: "Brain–computer interfacing experiments using the NeuroSky EEG headset, exploring EEG-driven control.",
       tags: ["EEG", "BCI", "NeuroSky"]
     }
+  ],
+
+  /* Order the project filter buttons + grid; unlisted categories fall back
+     to the end in their natural order. */
+  projectCategoryOrder: [
+    "Research",
+    "Industrial Automation",
+    "Biomedical",
+    "Embedded Systems & Robotics"
   ],
 
   /* ----------------------------------------------------------- publications */

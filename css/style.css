@@ -305,13 +305,22 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
   color: var(--accent); margin-bottom: 10px;
 }
-.project-card h4 { font-size: 1.1rem; margin-bottom: 10px; }
+.project-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+.project-client { font-size: 0.82rem; color: var(--text); font-weight: 600; margin-bottom: 2px; }
+.project-role { font-size: 0.8rem; color: var(--text-mute); margin-bottom: 10px; }
+.project-card > h4 + p { margin-top: 2px; }
 .project-card p { color: var(--text-soft); font-size: 0.92rem; flex: 1; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
 .project-tags span {
   font-size: 0.72rem; padding: 4px 10px; border-radius: 6px;
   background: var(--surface-2); border: 1px solid var(--border); color: var(--text-mute);
 }
+.project-link {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 14px;
+  font-family: var(--font-head); font-weight: 600; font-size: 0.86rem; color: var(--accent);
+  align-self: flex-start; transition: var(--transition);
+}
+.project-link:hover { gap: 8px; }
 .project-card.hide { display: none; }
 
 /* --------------------------------------------------------------- publications */
