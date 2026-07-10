@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Mushfiqur Rahaman — Edge AI & Smart Manufacturing Researcher</title>
+  <meta name="description" content="Portfolio of Md Mushfiqur Rahaman — Ph.D. student in Industrial Engineering (Data Science) at West Virginia University. Research in edge AI, model quantization, and smart manufacturing." />
+  <meta name="author" content="Md Mushfiqur Rahaman" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Md Mushfiqur Rahaman — Portfolio" />
+  <meta property="og:description" content="Edge AI · Model Quantization · Smart Manufacturing · Industry 4.0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/profile.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">MR</span>
+        <span class="brand-name">Mushfiqur Rahaman</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3v2m0 14v2M5.6 5.6l1.4 1.4m10 10 1.4 1.4M3 12h2m14 0h2M5.6 18.4l1.4-1.4m10-10 1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <p class="hero-eyebrow" data-reveal>Hi, I'm</p>
+          <h1 class="hero-name" data-reveal id="heroName"></h1>
+          <h2 class="hero-tagline" data-reveal id="heroTagline"></h2>
+          <p class="hero-sub" data-reveal id="heroSub"></p>
+          <div class="hero-meta" data-reveal>
+            <span class="hero-chip" id="heroInstitution"></span>
+            <span class="hero-chip" id="heroLocation"></span>
+          </div>
+          <div class="hero-actions" data-reveal>
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+          <div class="hero-socials" data-reveal id="heroSocials"></div>
+        </div>
+        <div class="hero-photo" data-reveal>
+          <div class="photo-frame">
+            <img id="heroPhoto" alt="Md Mushfiqur Rahaman" />
+            <div class="photo-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">01</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text" id="aboutText" data-reveal></div>
+          <aside class="about-side" data-reveal>
+            <div class="stat-grid" id="statGrid"></div>
+            <div class="about-cta">
+              <a id="cvAcademic" class="btn btn-outline" href="#" target="_blank" rel="noopener">Academic CV</a>
+              <a id="cvProfessional" class="btn btn-outline" href="#" target="_blank" rel="noopener">Professional CV</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section section-alt" id="research">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">02</span>
+          <h2 class="section-title">Research Focus</h2>
+        </div>
+        <p class="section-lead" id="researchIntro" data-reveal></p>
+        <div class="research-grid" id="researchGrid"></div>
+
+        <h3 class="subhead" data-reveal>Ongoing Research</h3>
+        <div class="ongoing-list" id="ongoingList"></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">03</span>
+          <h2 class="section-title">Experience & Education</h2>
+        </div>
+        <div class="xp-layout">
+          <div class="timeline" id="experienceTimeline"></div>
+          <aside class="edu-panel">
+            <h3 class="subhead" data-reveal>Education</h3>
+            <div id="educationList"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="filter-bar" id="projectFilters" data-reveal></div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">05</span>
+          <h2 class="section-title">Publications</h2>
+        </div>
+        <div class="pub-list" id="publicationList"></div>
+
+        <h3 class="subhead" data-reveal>Acknowledged Contributions</h3>
+        <div class="ack-list" id="acknowledgeList"></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">06</span>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+        <div class="skill-grid" id="skillGrid"></div>
+      </div>
+    </section>
+
+    <!-- Beyond Research: speaking + leadership + awards -->
+    <section class="section" id="beyond">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">07</span>
+          <h2 class="section-title">Beyond Research</h2>
+        </div>
+        <div class="beyond-grid">
+          <div class="beyond-col" data-reveal>
+            <h3 class="subhead">Awards</h3>
+            <div id="awardList"></div>
+          </div>
+          <div class="beyond-col" data-reveal>
+            <h3 class="subhead">Speaking & Seminars</h3>
+            <div id="speakingList"></div>
+          </div>
+          <div class="beyond-col" data-reveal>
+            <h3 class="subhead">Leadership</h3>
+            <div id="leadershipList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">08</span>
+          <h2 class="section-title">Get in Touch</h2>
+        </div>
+        <p class="section-lead" data-reveal>
+          I'm always open to research collaborations, discussions on edge AI and
+          smart manufacturing, or just a good conversation. Feel free to reach out.
+        </p>
+        <div class="contact-grid" id="contactGrid" data-reveal></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span id="footerName"></span>
+      <span class="footer-note">Built with HTML, CSS & JavaScript · <span id="footerYear"></span></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
