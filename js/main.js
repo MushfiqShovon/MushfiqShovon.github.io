@@ -27,7 +27,7 @@
     web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>'
   };
 
-  const P = window.PORTFOLIO;
+  const P = window.PORTFOLIO || (typeof PORTFOLIO !== "undefined" ? PORTFOLIO : null);
 
   /* ---------------------------------------------------------------- hero */
   function renderHero() {
@@ -345,18 +345,33 @@
   }
 
   /* ---------------------------------------------------------------- init */
-  document.addEventListener("DOMContentLoaded", () => {
-    renderHero();
-    renderAbout();
-    renderResearch();
-    renderExperience();
-    renderProjects();
-    renderPublications();
-    renderSkills();
-    renderBeyond();
-    renderContact();
-    initTheme();
-    initNav();
-    initReveal();
-  });
+  function boot() {
+    try {
+      if (!P) throw new Error("PORTFOLIO data not found — check that js/data.js loaded.");
+      renderHero();
+      renderAbout();
+      renderResearch();
+      renderExperience();
+      renderProjects();
+      renderPublications();
+      renderSkills();
+      renderBeyond();
+      renderContact();
+      initTheme();
+      initNav();
+      initReveal();
+    } catch (err) {
+      // Never leave the page blank: reveal whatever exists so content is readable.
+      console.error("Portfolio init failed:", err);
+      document.querySelectorAll("[data-reveal]").forEach((e) => e.classList.add("in"));
+    }
+  }
+
+  // Run now if the DOM is already parsed (scripts sit at end of <body>),
+  // otherwise wait for it.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();

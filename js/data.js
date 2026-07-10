@@ -361,3 +361,7 @@ const PORTFOLIO = {
     }
   ]
 };
+
+/* Expose to other scripts. A top-level `const` in a classic script is NOT a
+   property of `window`, so main.js reads the data from here. */
+window.PORTFOLIO = PORTFOLIO;
