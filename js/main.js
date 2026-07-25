@@ -265,11 +265,12 @@
     const cards = [
       { icon: "mail", label: "Email (University)", value: c.emailPrimary, url: "mailto:" + c.emailPrimary },
       { icon: "mail", label: "Email (Personal)", value: c.emailSecondary, url: "mailto:" + c.emailSecondary },
-      { icon: "phone", label: "Phone", value: c.phone, url: "tel:" + c.phone.replace(/\s/g, "") },
+      { icon: "phone", label: "Phone (USA)", value: c.phone, url: "tel:" + c.phone.replace(/\s/g, "") },
+      c.phoneBd && { icon: "phone", label: "Phone (Bangladesh)", value: c.phoneBd, url: "tel:" + c.phoneBd.replace(/\s/g, "") },
       { icon: "linkedin", label: "LinkedIn", value: "in/md-mushfiqur-rahaman", url: c.linkedin },
       { icon: "scholar", label: "Google Scholar", value: "Publications & Citations", url: c.scholar },
       { icon: "orcid", label: "ORCID", value: "0009-0005-2418-817X", url: c.orcid }
-    ];
+    ].filter(Boolean);
     cards.forEach((card) => {
       const a = el("a", "contact-card");
       a.href = card.url;

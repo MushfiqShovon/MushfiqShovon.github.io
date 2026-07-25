@@ -39,6 +39,7 @@ const PORTFOLIO = {
     emailPrimary: "mr00131@mix.wvu.edu",
     emailSecondary: "mushfiq.r.shovon@gmail.com",
     phone: "+1 304 685 7615",
+    phoneBd: "+880 1756 488224",
     linkedin: "https://www.linkedin.com/in/md-mushfiqur-rahaman-532506a7/",
     scholar: "https://scholar.google.com/citations?hl=en&user=BgRIA8cAAAAJ",
     orcid: "https://orcid.org/0009-0005-2418-817X",
