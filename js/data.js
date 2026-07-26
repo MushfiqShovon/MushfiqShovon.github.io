@@ -43,7 +43,7 @@ const PORTFOLIO = {
     linkedin: "https://www.linkedin.com/in/md-mushfiqur-rahaman-532506a7/",
     scholar: "https://scholar.google.com/citations?hl=en&user=BgRIA8cAAAAJ",
     orcid: "https://orcid.org/0009-0005-2418-817X",
-    github: "https://github.com/" // <-- update with your GitHub username
+    github: "https://github.com/MushfiqShovon"
   },
 
   /* ------------------------------------------------------- research focus */

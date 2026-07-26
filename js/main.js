@@ -42,6 +42,7 @@
 
     const c = P.contacts;
     const socials = [
+      c.github && { icon: "github", url: c.github, label: "GitHub" },
       c.linkedin && { icon: "linkedin", url: c.linkedin, label: "LinkedIn" },
       c.scholar && { icon: "scholar", url: c.scholar, label: "Google Scholar" },
       c.orcid && { icon: "orcid", url: c.orcid, label: "ORCID" },
@@ -268,6 +269,7 @@
       { icon: "mail", label: "Email (Personal)", value: c.emailSecondary, url: "mailto:" + c.emailSecondary },
       { icon: "phone", label: "Phone (USA)", value: c.phone, url: "tel:" + c.phone.replace(/\s/g, "") },
       c.phoneBd && { icon: "phone", label: "Phone (Bangladesh)", value: c.phoneBd, url: "tel:" + c.phoneBd.replace(/\s/g, "") },
+      c.github && { icon: "github", label: "GitHub", value: "MushfiqShovon", url: c.github },
       { icon: "linkedin", label: "LinkedIn", value: "in/md-mushfiqur-rahaman", url: c.linkedin },
       { icon: "scholar", label: "Google Scholar", value: "Publications & Citations", url: c.scholar },
       { icon: "orcid", label: "ORCID", value: "0009-0005-2418-817X", url: c.orcid }
