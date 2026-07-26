@@ -193,6 +193,7 @@
       const body = el("div");
       body.appendChild(el("div", "pub-title", pub.title));
       body.appendChild(el("div", "pub-authors", pub.authors));
+      if (pub.note) body.appendChild(el("div", "pub-note", pub.note));
       body.appendChild(el("div", "pub-venue", pub.venue));
       if (pub.doi) {
         const a = el("a", "pub-doi", ICONS.web + "View Publication");

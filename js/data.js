@@ -356,6 +356,16 @@ const PORTFOLIO = {
   /* ----------------------------------------------------------- publications */
   publications: [
     {
+      authors: "Hasan, M. M.†, Rahaman, M. M.†, Pachkovskiy, A., Ahmed, I., Dawson, J., & Das, S.",
+      note: "† Equal contribution (co-first authors)",
+      year: "2026",
+      title:
+        "XCT-SAM: Sequential Parameter-Efficient Domain Adaptation of SAM for Industrial XCT Defect Segmentation",
+      venue:
+        "IAPR Workshop on Machine Vision for Industrial Inspection (MVI²), 28th Int. Conf. on Pattern Recognition (ICPR 2026), Lyon, France · arXiv:2607.14287",
+      doi: "https://arxiv.org/abs/2607.14287"
+    },
+    {
       authors: "Rahaman, M. M., Chang, E., Haque, T., & Das, S.",
       year: "2025",
       title:
