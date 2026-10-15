@@ -120,7 +120,8 @@ const PORTFOLIO = {
       period: "2023 – Present",
       points: [
         "Research on post-training quantization of neural networks for efficient AI deployment on edge devices, including low-bit precision techniques and calibration methods.",
-        "Working on domain adaptation and quantization of SAM-based segmentation models for additive-manufacturing defect inspection."
+        "Working on domain adaptation and quantization of SAM-based segmentation models for additive-manufacturing defect inspection.",
+        "Co-first author of DCM-SAM (NeurIPS 2026 workshop), a defect-conditioned mixture of LoRA experts for SAM deployed on a Qualcomm Dragonwing IQ-9075 NPU."
       ]
     },
     {
@@ -160,6 +161,13 @@ const PORTFOLIO = {
 
   /* --------------------------------------------------------------- projects */
   projects: [
+    {
+      title: "DCM-SAM: Mixture of LoRA Experts for NPU-Deployed Defect Segmentation",
+      category: "Research",
+      text: "Promptless SAM (ViT-B) with a separate Conv-LoRA mixture-of-experts bank and mask decoder for each defect class, segmenting pores and inclusions in additive-manufacturing XCT scans. Deployed in FP16 on the Hexagon NPU of a Qualcomm Dragonwing IQ-9075; reaches 64.2% pore IoU on real NIST XCT scans while training ~4.4% of parameters per defect head. NeurIPS 2026 workshop paper.",
+      link: "https://mushfiqshovon.github.io/DCM-SAM/",
+      tags: ["SAM", "Mixture of LoRA Experts", "NPU Deployment", "XCT"]
+    },
     {
       title: "SAM Quantization for AM Defect Inspection",
       category: "Research",
@@ -359,6 +367,16 @@ const PORTFOLIO = {
   /* ----------------------------------------------------------- publications */
   publications: [
     {
+      authors: "Rahaman, M. M.†, Hasan, M. M.†, Ahmed, I., & Das, S.",
+      note: "† Equal contribution (co-first authors)",
+      year: "2026",
+      title:
+        "DCM-SAM: Defect-Conditioned Mixture of LoRA Experts for NPU-Deployed AM Defect Segmentation",
+      venue:
+        "NeurIPS 2026 Workshop on On-Device Intelligence: Foundation Models under Real-World Constraints",
+      doi: "https://openreview.net/forum?id=Ehh5nUkKCM"
+    },
+    {
       authors: "Hasan, M. M.†, Rahaman, M. M.†, Pachkovskiy, A., Ahmed, I., Dawson, J., & Das, S.",
       note: "† Equal contribution (co-first authors)",
       year: "2026",
@@ -414,7 +432,7 @@ const PORTFOLIO = {
   skills: [
     {
       group: "Machine Learning & Edge AI",
-      items: ["PyTorch", "Post-Training Quantization", "Brevitas", "ONNX", "Qualcomm QNN/SNPE", "Computer Vision", "Anomaly Detection", "LSTM / GRU / Transformers"]
+      items: ["PyTorch", "Post-Training Quantization", "Brevitas", "ONNX", "Qualcomm QNN/SNPE", "Qualcomm AI Hub", "LoRA / Mixture of Experts","Computer Vision", "Anomaly Detection", "LSTM / GRU / Transformers"]
     },
     {
       group: "Programming & Data",
@@ -430,7 +448,7 @@ const PORTFOLIO = {
     },
     {
       group: "Edge & Embedded Devices",
-      items: ["Qualcomm RB3 Gen2", "Raspberry Pi", "Arduino", "PIC Microcontroller"]
+      items: ["Qualcomm Dragonwing IQ-9075", "Qualcomm RB3 Gen2","Raspberry Pi", "Arduino", "PIC Microcontroller"]
     },
     {
       group: "Servers & Research Computing",
