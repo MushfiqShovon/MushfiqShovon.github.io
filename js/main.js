@@ -66,7 +66,8 @@
     const grid = $("#statGrid");
     P.stats.forEach((s) => {
       const card = el("div", "stat-card");
-      card.appendChild(el("div", "stat-value", s.value));
+      const value = s.count ? String((P[s.count] || []).length) : s.value;
+      card.appendChild(el("div", "stat-value", value));
       card.appendChild(el("div", "stat-label", s.label));
       grid.appendChild(card);
     });
@@ -261,18 +262,30 @@
   }
 
   /* ---------------------------------------------------------------- contact */
+  // Last non-empty path segment of a URL, e.g. ".../in/name/" -> "name".
+  function lastSegment(url) {
+    try {
+      const parts = new URL(url).pathname.split("/").filter(Boolean);
+      return parts[parts.length - 1] || url;
+    } catch (e) {
+      return url;
+    }
+  }
+
   function renderContact() {
     const c = P.contacts;
+    // LinkedIn appends an auto-generated id to slugs ("name-532506a7"); hide it.
+    const linkedinSlug = c.linkedin && lastSegment(c.linkedin).replace(/-[0-9a-f]{6,}$/i, "");
     const grid = $("#contactGrid");
     const cards = [
       { icon: "mail", label: "Email (University)", value: c.emailPrimary, url: "mailto:" + c.emailPrimary },
       { icon: "mail", label: "Email (Personal)", value: c.emailSecondary, url: "mailto:" + c.emailSecondary },
       { icon: "phone", label: "Phone (USA)", value: c.phone, url: "tel:" + c.phone.replace(/\s/g, "") },
       c.phoneBd && { icon: "phone", label: "Phone (Bangladesh)", value: c.phoneBd, url: "tel:" + c.phoneBd.replace(/\s/g, "") },
-      c.github && { icon: "github", label: "GitHub", value: "MushfiqShovon", url: c.github },
-      { icon: "linkedin", label: "LinkedIn", value: "in/md-mushfiqur-rahaman", url: c.linkedin },
-      { icon: "scholar", label: "Google Scholar", value: "Publications & Citations", url: c.scholar },
-      { icon: "orcid", label: "ORCID", value: "0009-0005-2418-817X", url: c.orcid }
+      c.github && { icon: "github", label: "GitHub", value: lastSegment(c.github), url: c.github },
+      c.linkedin && { icon: "linkedin", label: "LinkedIn", value: "in/" + linkedinSlug, url: c.linkedin },
+      c.scholar && { icon: "scholar", label: "Google Scholar", value: "Publications & Citations", url: c.scholar },
+      c.orcid && { icon: "orcid", label: "ORCID", value: lastSegment(c.orcid), url: c.orcid }
     ].filter(Boolean);
     cards.forEach((card) => {
       const a = el("a", "contact-card");

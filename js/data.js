@@ -26,12 +26,15 @@ const PORTFOLIO = {
     ]
   },
 
-  /* ------------------------------------------------------------------ stats */
+  /* ------------------------------------------------------------------ stats
+     Use `value` for a fixed number, or `count: "<key>"` to show the length
+     of that array in this file (e.g. "publications", "awards"), so the
+     number updates itself when items are added. */
   stats: [
     { value: "6+", label: "Years in Industry 4.0" },
-    { value: "5", label: "Peer-Reviewed Publications" },
+    { count: "publications", label: "Peer-Reviewed Publications" },
     { value: "3", label: "Global FMCG / Automation Firms" },
-    { value: "2", label: "Best Engineer & Director Awards" }
+    { count: "awards", label: "Best Engineer & Director Awards" }
   ],
 
   /* --------------------------------------------------------------- contacts */
