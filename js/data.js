@@ -374,7 +374,8 @@ const PORTFOLIO = {
         "DCM-SAM: Defect-Conditioned Mixture of LoRA Experts for NPU-Deployed AM Defect Segmentation",
       venue:
         "NeurIPS 2026 Workshop on On-Device Intelligence: Foundation Models under Real-World Constraints",
-      doi: "https://openreview.net/forum?id=Ehh5nUkKCM"
+      doi: "https://openreview.net/forum?id=Ehh5nUkKCM",
+      page: "https://mushfiqshovon.github.io/DCM-SAM/"
     },
     {
       authors: "Hasan, M. M.†, Rahaman, M. M.†, Pachkovskiy, A., Ahmed, I., Dawson, J., & Das, S.",

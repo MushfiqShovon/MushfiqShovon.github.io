@@ -197,10 +197,18 @@
       body.appendChild(el("div", "pub-authors", pub.authors));
       if (pub.note) body.appendChild(el("div", "pub-note", pub.note));
       body.appendChild(el("div", "pub-venue", pub.venue));
-      if (pub.doi) {
-        const a = el("a", "pub-doi", ICONS.web + "View Publication");
-        a.href = pub.doi; a.target = "_blank"; a.rel = "noopener";
-        body.appendChild(a);
+      const links = [
+        pub.doi && { url: pub.doi, label: "View Publication" },
+        pub.page && { url: pub.page, label: "Project Page" }
+      ].filter(Boolean);
+      if (links.length) {
+        const wrap = el("div", "pub-links");
+        links.forEach((l) => {
+          const a = el("a", "pub-doi", ICONS.web + l.label);
+          a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+          wrap.appendChild(a);
+        });
+        body.appendChild(wrap);
       }
       item.appendChild(body);
       list.appendChild(item);
