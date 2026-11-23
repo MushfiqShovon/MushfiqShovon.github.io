@@ -76,6 +76,128 @@
     $("#cvProfessional").href = P.profile.resumeProfessional;
   }
 
+  /* ---------------------------------------------------------------- news */
+  const NEWS_TYPES = {
+    award: { icon: "🏆", label: "Award" },
+    talk: { icon: "🎤", label: "Talk" },
+    demo: { icon: "🚀", label: "Demo" },
+    paper: { icon: "📄", label: "Paper" },
+    milestone: { icon: "🎓", label: "Milestone" }
+  };
+
+  function renderNews() {
+    const list = $("#newsList");
+    if (!list) return;
+    const news = P.news || [];
+    const visible = P.newsVisible || 5;
+
+    news.forEach((n, idx) => {
+      const t = NEWS_TYPES[n.type] || { icon: "📌", label: "Update" };
+      const item = el("article", "news-item" + (idx >= visible ? " news-extra" : ""));
+      item.setAttribute("data-reveal", "");
+      item.dataset.type = n.type || "";
+
+      const meta = el("div", "news-meta");
+      meta.appendChild(el("div", "news-date", n.date));
+      meta.appendChild(el("span", "news-badge", t.icon + " " + t.label));
+      item.appendChild(meta);
+
+      const body = el("div", "news-body");
+      body.appendChild(el("h3", "news-title", n.title));
+      if (n.text) body.appendChild(el("p", "news-text", n.text));
+
+      if (n.links && n.links.length) {
+        const links = el("div", "news-links");
+        n.links.forEach((l) => {
+          const a = el("a", "news-link", l.label + " ↗");
+          a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+          links.appendChild(a);
+        });
+        body.appendChild(links);
+      }
+
+      if (n.images && n.images.length) {
+        const gallery = el("div", "news-photos count-" + Math.min(n.images.length, 3));
+        n.images.forEach((img, i) => {
+          const b = el("button", "news-photo");
+          b.type = "button";
+          b.setAttribute("aria-label", "View photo: " + img.alt);
+          const im = el("img");
+          im.src = img.src; im.alt = img.alt; im.loading = "lazy"; im.decoding = "async";
+          b.appendChild(im);
+          b.addEventListener("click", () => openLightbox(n.images, i));
+          gallery.appendChild(b);
+        });
+        body.appendChild(gallery);
+      }
+
+      item.appendChild(body);
+      list.appendChild(item);
+    });
+
+    if (news.length > visible) {
+      const label = "Show all news (" + news.length + ")";
+      const btn = el("button", "btn btn-ghost news-toggle", label);
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", () => {
+        const open = list.classList.toggle("show-all");
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "Show less" : label;
+        if (open) list.querySelectorAll(".news-extra").forEach((e) => e.classList.add("in"));
+        else $("#news").scrollIntoView({ behavior: "smooth" });
+      });
+      $("#newsMore").appendChild(btn);
+    }
+  }
+
+  /* ---------------------------------------------------------------- lightbox */
+  const lb = { images: [], index: 0, lastFocus: null };
+
+  function showLightboxImage() {
+    const img = lb.images[lb.index];
+    $("#lbImg").src = img.src;
+    $("#lbImg").alt = img.alt;
+    const multi = lb.images.length > 1;
+    $("#lbCaption").textContent = img.alt + (multi ? "  (" + (lb.index + 1) + " / " + lb.images.length + ")" : "");
+    $("#lbPrev").hidden = !multi;
+    $("#lbNext").hidden = !multi;
+  }
+
+  function openLightbox(images, index) {
+    lb.images = images; lb.index = index; lb.lastFocus = document.activeElement;
+    showLightboxImage();
+    $("#lightbox").hidden = false;
+    document.body.classList.add("lb-open");
+    $("#lbClose").focus();
+  }
+
+  function closeLightbox() {
+    $("#lightbox").hidden = true;
+    document.body.classList.remove("lb-open");
+    if (lb.lastFocus) lb.lastFocus.focus();
+  }
+
+  function stepLightbox(d) {
+    lb.index = (lb.index + d + lb.images.length) % lb.images.length;
+    showLightboxImage();
+  }
+
+  function initLightbox() {
+    const box = $("#lightbox");
+    if (!box) return;
+    $("#lbClose").addEventListener("click", closeLightbox);
+    $("#lbPrev").addEventListener("click", () => stepLightbox(-1));
+    $("#lbNext").addEventListener("click", () => stepLightbox(1));
+    box.addEventListener("click", (e) => { if (e.target === box) closeLightbox(); });
+    document.addEventListener("keydown", (e) => {
+      if (box.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft" && lb.images.length > 1) stepLightbox(-1);
+      else if (e.key === "ArrowRight" && lb.images.length > 1) stepLightbox(1);
+    });
+  }
+
   /* ---------------------------------------------------------------- research */
   function renderResearch() {
     $("#researchIntro").textContent = P.research.intro;
@@ -167,10 +289,18 @@
       const tags = el("div", "project-tags");
       p.tags.forEach((t) => tags.appendChild(el("span", null, t)));
       card.appendChild(tags);
-      if (p.link) {
-        const a = el("a", "project-link", "View Project ↗");
-        a.href = p.link; a.target = "_blank"; a.rel = "noopener";
-        card.appendChild(a);
+      const plinks = [
+        p.link && { url: p.link, label: "View Project ↗" },
+        p.video && { url: p.video, label: "Watch Demo ▶" }
+      ].filter(Boolean);
+      if (plinks.length) {
+        const row = el("div", "project-links");
+        plinks.forEach((l) => {
+          const a = el("a", "project-link", l.label);
+          a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+          row.appendChild(a);
+        });
+        card.appendChild(row);
       }
       grid.appendChild(card);
     });
@@ -399,6 +529,7 @@
       if (!P) throw new Error("PORTFOLIO data not found — check that js/data.js loaded.");
       renderHero();
       renderAbout();
+      renderNews();
       renderResearch();
       renderExperience();
       renderProjects();
@@ -406,6 +537,7 @@
       renderSkills();
       renderBeyond();
       renderContact();
+      initLightbox();
       initTheme();
       initNav();
       initReveal();

@@ -34,7 +34,88 @@ const PORTFOLIO = {
     { value: "6+", label: "Years in Industry 4.0" },
     { count: "publications", label: "Peer-Reviewed Publications" },
     { value: "3", label: "Global FMCG / Automation Firms" },
-    { count: "awards", label: "Best Engineer & Director Awards" }
+    { count: "awards", label: "Honors & Awards" }
+  ],
+
+  /* ------------------------------------------------------------------- news
+     Newest first. The first `newsVisible` items show; the rest sit behind a
+     "Show all" button.
+       date   : display text (e.g. "Nov 2026")
+       type   : award | talk | demo | paper | milestone  (sets the badge)
+       title  : headline
+       text   : one or two sentences (HTML allowed)
+       images : optional [{ src, alt }] — click opens a full-size viewer
+       links  : optional [{ label, url }]                                   */
+  newsVisible: 5,
+  news: [
+    {
+      date: "Nov 2026",
+      type: "demo",
+      title: "Live demo at the Qualcomm booth — electronica 2026, Munich",
+      text: "With my advisor Dr. Srinjoy Das, I demonstrated our real-time ball-bearing defect segmentation running fully on-device on a Qualcomm Dragonwing™ IQ-9075 at Qualcomm's booth (C5.439) at electronica 2026, the biennial international trade fair for electronics. The project was developed in partnership with Qualcomm, and we presented it to engineers and industry visitors throughout the show.",
+      images: [
+        { src: "assets/img/news/electronica-qualcomm-booth.jpg", alt: "Mushfiqur Rahaman at the Qualcomm booth at electronica 2026 with the ball-bearing defect segmentation demo" }
+      ],
+      links: [
+        { label: "Booth video", url: "https://www.youtube.com/watch?v=xz7teBhSEjQ" },
+        { label: "Project page", url: "https://mushfiqshovon.github.io/BallBearingDefect_qcomm_edge/" }
+      ]
+    },
+    {
+      date: "Nov 2026",
+      type: "talk",
+      title: "Presented and chaired a session at INFORMS 2026, San Francisco",
+      text: "Presented <em>Edge-Deployable Ball Bearing Defect Segmentation via Pseudo-Mask Bootstrapping and Parameter-Efficient SAM Domain Adaptation</em> and served as Session Chair for SA16, <em>AI-Enabled Process Improvement in Service Operations</em>, at the 2026 INFORMS Annual Meeting.",
+      images: [
+        { src: "assets/img/news/informs-sf.jpg", alt: "At the INFORMS 2026 Annual Meeting in San Francisco" },
+        { src: "assets/img/news/informs-talk.jpg", alt: "Presenting at the 2026 INFORMS Annual Meeting" },
+        { src: "assets/img/news/informs-session-chair.jpg", alt: "Chairing session SA16 at INFORMS 2026" }
+      ]
+    },
+    {
+      date: "Oct 2026",
+      type: "award",
+      title: "Overall Runner-up — Student Poster Competition, Mountain State Cyber Summit 2026",
+      text: "Our poster <em>Cloud-Free Edge AI for Defect Inspection in Metal Additive Manufacturing</em> (with Md Mahedi Hasan) was named Second Overall Poster at the WVU Mountain State Cyber Summit + Tech Yeah 2026, my first poster presentation as a Ph.D. student. My wife, Tasmiah Haque, took Track Winner in her track.",
+      images: [
+        { src: "assets/img/news/cyber-summit-award.jpg", alt: "Holding the Second Overall Poster certificate with my wife, Tasmiah Haque, Track Winner, at the WVU Mountain State Cyber Summit" },
+        { src: "assets/img/news/cyber-summit-poster.jpg", alt: "Standing beside poster AM-02 at the Mountain State Cyber Summit 2026" }
+      ]
+    },
+    {
+      date: "Sep 2026",
+      type: "paper",
+      title: "DCM-SAM accepted at the NeurIPS 2026 Workshop on On-Device Intelligence",
+      text: "Our defect-conditioned mixture of LoRA experts for SAM, deployed on the Hexagon NPU of a Qualcomm Dragonwing IQ-9075, was accepted as a poster.",
+      links: [
+        { label: "OpenReview", url: "https://openreview.net/forum?id=Ehh5nUkKCM" },
+        { label: "Project page", url: "https://mushfiqshovon.github.io/DCM-SAM/" }
+      ]
+    },
+    {
+      date: "Jun 2026",
+      type: "paper",
+      title: "XCT-SAM accepted for oral presentation at MVI² @ ICPR 2026, Lyon",
+      text: "Sequential parameter-efficient domain adaptation of SAM for industrial XCT defect segmentation, published in the Springer workshop proceedings.",
+      links: [
+        { label: "arXiv", url: "https://arxiv.org/abs/2607.14287" }
+      ]
+    },
+    {
+      date: "Aug 2025",
+      type: "milestone",
+      title: "Started my Ph.D. in Industrial Engineering (Data Science) at WVU",
+      text: "After completing my M.S. in Applied Mathematics at West Virginia University."
+    },
+    {
+      date: "Jul 2025",
+      type: "paper",
+      title: "Preprint: Post-Training Quantization of LSTM Text Classifiers",
+      text: "A study of calibration, class balance, and robustness for generative and discriminative LSTM classifiers under low-bit inference.",
+      links: [
+        { label: "arXiv", url: "https://doi.org/10.48550/arXiv.2507.09687" }
+      ]
+    }
   ],
 
   /* --------------------------------------------------------------- contacts */
@@ -80,11 +161,6 @@ const PORTFOLIO = {
         title:
           "Edge deployment & quantization of foundation models for additive manufacturing inspection",
         text: "Domain adaptation and quantization of Segment Anything Model (SAM)-based segmentation models for XCT-based additive manufacturing defect and pore inspection, with deployment considerations for Qualcomm edge devices."
-      },
-      {
-        title:
-          "Post-training quantization of generative & discriminative LSTM text classifiers",
-        text: "Quantizing neural-network text classifiers for edge deployment using Brevitas, with a focus on calibration quality, class balance, and robustness under low-bit quantization."
       }
     ]
   },
@@ -183,9 +259,10 @@ const PORTFOLIO = {
     {
       title: "Ball Bearing Defect Detection on Qualcomm Edge",
       category: "Research",
-      text: "Real-time ball-bearing defect detection deployed on a Qualcomm edge device, demonstrating on-device inference for industrial condition monitoring.",
+      text: "Real-time ball-bearing defect detection and segmentation running fully on-device on a Qualcomm Dragonwing IQ-9075. Developed in partnership with Qualcomm, demonstrated live at the Qualcomm booth at electronica 2026 (Munich), and presented at INFORMS 2026.",
       link: "https://mushfiqshovon.github.io/BallBearingDefect_qcomm_edge/",
-      tags: ["Edge AI", "Qualcomm", "Anomaly Detection", "Condition Monitoring"]
+      video: "https://www.youtube.com/watch?v=xz7teBhSEjQ",
+      tags: ["Edge AI", "Qualcomm Dragonwing", "SAM", "Defect Segmentation"]
     },
     {
       title: "Domain Adaptation of SAM for Industrial XCT Defect Segmentation",
@@ -464,6 +541,24 @@ const PORTFOLIO = {
   /* --------------------------------------------------------------- speaking */
   speaking: [
     {
+      role: "Live Demo",
+      title: "Real-Time Ball Bearing Defect Segmentation on Qualcomm Dragonwing IQ-9075",
+      org: "Qualcomm booth, electronica 2026, Munich",
+      date: "Nov 10–13, 2026"
+    },
+    {
+      role: "Presenter",
+      title: "Edge-Deployable Ball Bearing Defect Segmentation via Pseudo-Mask Bootstrapping and Parameter-Efficient SAM Domain Adaptation",
+      org: "2026 INFORMS Annual Meeting, San Francisco — Session SA16",
+      date: "Nov 1, 2026"
+    },
+    {
+      role: "Poster Presenter",
+      title: "Cloud-Free Edge AI for Defect Inspection in Metal Additive Manufacturing",
+      org: "Mountain State Cyber Summit + Tech Yeah 2026, WVU",
+      date: "Oct 27, 2026"
+    },
+    {
       role: "Keynote Speaker",
       title: "Landing on Industry with a Future-fit Skillset",
       org: "Dept. of EEE, CUET — EEE Day",
@@ -486,6 +581,11 @@ const PORTFOLIO = {
   /* ------------------------------------------------------------- leadership */
   leadership: [
     {
+      role: "Session Chair — SA16: AI-Enabled Process Improvement in Service Operations",
+      org: "2026 INFORMS Annual Meeting, San Francisco",
+      date: "Nov 1, 2026"
+    },
+    {
       role: "Co-Chair / Vice President",
       org: "IEEE Student Branch, CUET",
       date: "Dec 2015 – Dec 2016"
@@ -505,14 +605,19 @@ const PORTFOLIO = {
   /* ----------------------------------------------------------------- awards */
   awards: [
     {
-      title: "Best Engineer of the Year",
-      org: "Unilever Bangladesh Ltd.",
-      year: "2021"
+      title: "Second Overall Poster (Overall Runner-up) — Student Poster Competition",
+      org: "Mountain State Cyber Summit + Tech Yeah 2026, West Virginia University",
+      year: "2026"
     },
     {
       title: "Supply Chain Director’s Award — Talent Development in Control & Instrumentation",
       org: "Unilever Bangladesh Ltd.",
       year: "2022"
+    },
+    {
+      title: "Best Engineer of the Year",
+      org: "Unilever Bangladesh Ltd.",
+      year: "2021"
     }
   ]
 };
