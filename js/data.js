@@ -54,7 +54,8 @@ const PORTFOLIO = {
       title: "Live demo at the Qualcomm booth — electronica 2026, Munich",
       text: "With my advisor Dr. Srinjoy Das, I demonstrated our real-time ball-bearing defect segmentation running fully on-device on a Qualcomm Dragonwing™ IQ-9075 at Qualcomm's booth (C5.439) at electronica 2026, the biennial international trade fair for electronics. The project was developed in partnership with Qualcomm, and we presented it to engineers and industry visitors throughout the show.",
       images: [
-        { src: "assets/img/news/electronica-qualcomm-booth.jpg", alt: "Mushfiqur Rahaman at the Qualcomm booth at electronica 2026 with the ball-bearing defect segmentation demo" }
+        { src: "assets/img/news/electronica-booth-1.jpg", alt: "At the Qualcomm booth at electronica 2026 with the live ball-bearing defect segmentation demo on the Dragonwing IQ-9075" },
+        { src: "assets/img/news/electronica-booth-2.jpg", alt: "With my advisor, Dr. Srinjoy Das, at the Qualcomm booth at electronica 2026" }
       ],
       links: [
         { label: "Booth video", url: "https://www.youtube.com/watch?v=xz7teBhSEjQ" },
