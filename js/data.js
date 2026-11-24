@@ -20,9 +20,9 @@ const PORTFOLIO = {
     resumeAcademic: "assets/docs/CV_Mushfiqur_Rahaman_Academic.pdf",
     resumeProfessional: "assets/docs/CV_Mushfiqur_Rahaman_Professional.pdf",
     about: [
-      "I am a Ph.D. student in Industrial Engineering with a concentration in AI/ML at West Virginia University. My research sits at the intersection of efficient deep learning and real-world manufacturing, focusing on real-time edge AI, post-training model quantization, and anomaly/defect detection in additive manufacturing and AI-enabled smart manufacturing systems.",
-      "Before returning to academia, I spent more than six years leading industrial automation and Industry 4.0 initiatives in FMCG manufacturing at Unilever Bangladesh, Nestlé Bangladesh, and Unipolar Automation Technologies. That industry background — SCADA/PLC systems, OPC/SQL/Azure data pipelines, and plant digitalization — grounds my research in the practical realities of deploying AI on the factory floor.",
-      "I hold an M.S. in Applied Mathematics from WVU and a B.Sc. in Electrical and Electronic Engineering from CUET. I enjoy building things that bridge the gap between resource-constrained edge hardware and the models that need to run on them."
+      "I'm a Ph.D. student in Industrial Engineering (AI/ML) at West Virginia University. My work is about making deep learning practical on the factory floor: running models in real time on edge devices, shrinking them with post-training quantization, and using them to find defects in additive-manufactured parts and other smart-manufacturing systems.",
+      "Before coming back to school, I spent more than six years in FMCG manufacturing at Unilever Bangladesh, Nestlé Bangladesh, and Unipolar Automation Technologies, leading industrial automation and Industry 4.0 projects. I worked hands-on with SCADA and PLC systems, built OPC, SQL, and Azure data pipelines, and helped digitalize plants. That experience shapes my research: I care about what it really takes to deploy AI in a working factory.",
+      "I also hold an M.S. in Applied Mathematics from WVU and a B.Sc. in Electrical and Electronic Engineering from CUET. What I enjoy most is getting capable models to run well on small, low-power hardware."
     ]
   },
 
@@ -51,7 +51,7 @@ const PORTFOLIO = {
     {
       date: "Nov 2026",
       type: "demo",
-      title: "Live demo at the Qualcomm booth — electronica 2026, Munich",
+      title: "Live demo at the Qualcomm booth, electronica 2026 in Munich",
       text: "With my advisor Dr. Srinjoy Das, I demonstrated our real-time ball-bearing defect segmentation running fully on-device on a Qualcomm Dragonwing™ IQ-9075 at Qualcomm's booth (C5.439) at electronica 2026, the biennial international trade fair for electronics. The project was developed in partnership with Qualcomm, and we presented it to engineers and industry visitors throughout the show.",
       images: [
         { src: "assets/img/news/electronica-booth-1.jpg", alt: "At the Qualcomm booth at electronica 2026 with the live ball-bearing defect segmentation demo on the Dragonwing IQ-9075" },
@@ -76,7 +76,7 @@ const PORTFOLIO = {
     {
       date: "Oct 2026",
       type: "award",
-      title: "Overall Runner-up — Student Poster Competition, Mountain State Cyber Summit 2026",
+      title: "Overall Runner-up in the Student Poster Competition at the Mountain State Cyber Summit 2026",
       text: "Our poster <em>Cloud-Free Edge AI for Defect Inspection in Metal Additive Manufacturing</em> (with Md Mahedi Hasan) was named Second Overall Poster at the WVU Mountain State Cyber Summit + Tech Yeah 2026, my first poster presentation as a Ph.D. student. My wife, Tasmiah Haque, took Track Winner in her track.",
       images: [
         { src: "assets/img/news/cyber-summit-award.jpg", alt: "Holding the Second Overall Poster certificate with my wife, Tasmiah Haque, Track Winner, at the WVU Mountain State Cyber Summit" },
@@ -134,7 +134,7 @@ const PORTFOLIO = {
   /* ------------------------------------------------------- research focus */
   research: {
     intro:
-      "My work centers on making modern deep learning models small, fast, and reliable enough to run on the edge — right next to the sensors and cameras in a factory or clinic.",
+      "My work centers on making modern deep learning models small, fast, and reliable enough to run on the edge, right next to the sensors and cameras in a factory or clinic.",
     interests: [
       {
         icon: "chip",
@@ -171,7 +171,7 @@ const PORTFOLIO = {
     {
       school: "West Virginia University",
       location: "Morgantown, WV, USA",
-      degree: "Ph.D. in Industrial Engineering — Concentration: AI/ML",
+      degree: "Ph.D. in Industrial Engineering (Concentration: AI/ML)",
       period: "Aug 2025 – Present (Expected Aug 2028)"
     },
     {
@@ -191,7 +191,7 @@ const PORTFOLIO = {
   /* -------------------------------------------------------------- experience */
   experience: [
     {
-      role: "Research Assistant — Data Science",
+      role: "Research Assistant, Data Science",
       org: "School of Mathematical and Data Sciences, West Virginia University",
       location: "Morgantown, WV, USA",
       period: "2023 – Present",
@@ -202,7 +202,7 @@ const PORTFOLIO = {
       ]
     },
     {
-      role: "Manager — Electrical and Automation",
+      role: "Manager, Electrical and Automation",
       org: "Unilever Bangladesh Ltd. (Kalurghat Factory)",
       location: "Chittagong, Bangladesh",
       period: "Mar 2020 – Jul 2023",
@@ -215,7 +215,7 @@ const PORTFOLIO = {
       ]
     },
     {
-      role: "Officer — Electrical and Automation",
+      role: "Officer, Electrical and Automation",
       org: "Nestlé Bangladesh Ltd.",
       location: "Gazipur, Bangladesh",
       period: "Dec 2018 – Feb 2020",
@@ -254,7 +254,7 @@ const PORTFOLIO = {
     {
       title: "PTQ of LSTM Text Classifiers",
       category: "Research",
-      text: "Post-training quantization of generative and discriminative LSTM text classifiers with Brevitas — studying calibration, class balance, and robustness under low-bit inference.",
+      text: "Post-training quantization of generative and discriminative LSTM text classifiers with Brevitas, studying calibration, class balance, and robustness under low-bit inference.",
       tags: ["Brevitas", "LSTM", "ONNX", "PyTorch"]
     },
     {
@@ -307,7 +307,7 @@ const PORTFOLIO = {
       title: "Utility Plant Monitoring System",
       category: "Industrial Automation",
       client: "Unilever Bangladesh Ltd.",
-      text: "Web-based monitoring and reporting system for utility assets — generators, chillers, compressors, water treatment plant, and boilers — using SCADA and SQL Server.",
+      text: "Web-based monitoring and reporting for utility assets (generators, chillers, compressors, water treatment plant, and boilers), built on SCADA and SQL Server.",
       tags: ["SCADA", "SQL Server", "Utilities", "Web Dashboard"]
     },
     {
@@ -370,7 +370,7 @@ const PORTFOLIO = {
       tags: ["Automation", "Servicing", "HMI"]
     },
     {
-      title: "VFD Installation & Commissioning — Chiller Unit",
+      title: "VFD Installation & Commissioning for a Chiller Unit",
       category: "Industrial Automation",
       client: "Unilever (Kalurghat Plant)",
       text: "Installation and commissioning of variable frequency drives on a chiller unit to improve energy efficiency and process control.",
@@ -510,8 +510,12 @@ const PORTFOLIO = {
   /* ------------------------------------------------------------------ skills */
   skills: [
     {
-      group: "Machine Learning & Edge AI",
-      items: ["PyTorch", "Post-Training Quantization", "Brevitas", "ONNX", "Qualcomm QNN/SNPE", "Qualcomm AI Hub", "LoRA / Mixture of Experts","Computer Vision", "Anomaly Detection", "LSTM / GRU / Transformers"]
+      group: "Edge AI & Model Optimization",
+      items: ["Hexagon NPU Deployment", "Qualcomm QNN/SNPE", "Qualcomm AI Hub", "Post-Training Quantization", "FP16 / Low-bit Inference", "Model Compression", "Brevitas", "ONNX", "On-device Profiling"]
+    },
+    {
+      group: "Deep Learning & Computer Vision",
+      items: ["PyTorch", "CNNs", "LSTM / Transformers", "Vision Transformers", "Segment Anything (SAM, MobileSAM)", "YOLOv8", "Transfer Learning", "LoRA / Mixture of Experts", "Computer Vision", "Image Segmentation", "Anomaly Detection"]
     },
     {
       group: "Programming & Data",
@@ -531,7 +535,7 @@ const PORTFOLIO = {
     },
     {
       group: "Servers & Research Computing",
-      items: ["Kubernetes", "Nautilus / NRP", "Linux Server", "Proxmox", "VMware", "GPU Training"]
+      items: ["Kubernetes", "Nautilus / NRP", "Linux Server", "Proxmox", "VMware", "CUDA GPU Training"]
     },
     {
       group: "Engineering Tools",
@@ -550,7 +554,7 @@ const PORTFOLIO = {
     {
       role: "Presenter",
       title: "Edge-Deployable Ball Bearing Defect Segmentation via Pseudo-Mask Bootstrapping and Parameter-Efficient SAM Domain Adaptation",
-      org: "2026 INFORMS Annual Meeting, San Francisco — Session SA16",
+      org: "2026 INFORMS Annual Meeting, San Francisco (Session SA16)",
       date: "Nov 1, 2026"
     },
     {
@@ -562,12 +566,12 @@ const PORTFOLIO = {
     {
       role: "Keynote Speaker",
       title: "Landing on Industry with a Future-fit Skillset",
-      org: "Dept. of EEE, CUET — EEE Day",
+      org: "EEE Day, Dept. of EEE, CUET",
       date: "Dec 8, 2022"
     },
     {
       role: "Keynote Speaker",
-      title: "IoT in Industrial Automation — The Journey towards Industry 4.0",
+      title: "IoT in Industrial Automation: The Journey towards Industry 4.0",
       org: "Robo Mechatronics Association, CUET",
       date: "Dec 2021"
     },
@@ -582,7 +586,7 @@ const PORTFOLIO = {
   /* ------------------------------------------------------------- leadership */
   leadership: [
     {
-      role: "Session Chair — SA16: AI-Enabled Process Improvement in Service Operations",
+      role: "Session Chair, SA16: AI-Enabled Process Improvement in Service Operations",
       org: "2026 INFORMS Annual Meeting, San Francisco",
       date: "Nov 1, 2026"
     },
@@ -606,12 +610,12 @@ const PORTFOLIO = {
   /* ----------------------------------------------------------------- awards */
   awards: [
     {
-      title: "Second Overall Poster (Overall Runner-up) — Student Poster Competition",
+      title: "Second Overall Poster (Overall Runner-up), Student Poster Competition",
       org: "Mountain State Cyber Summit + Tech Yeah 2026, West Virginia University",
       year: "2026"
     },
     {
-      title: "Supply Chain Director’s Award — Talent Development in Control & Instrumentation",
+      title: "Supply Chain Director’s Award for Talent Development in Control & Instrumentation",
       org: "Unilever Bangladesh Ltd.",
       year: "2022"
     },

@@ -383,7 +383,7 @@
     const speaking = $("#speakingList");
     P.speaking.forEach((s) => {
       const card = el("div", "mini-card");
-      card.appendChild(el("div", "mini-title", s.role + " — " + s.title));
+      card.appendChild(el("div", "mini-title", s.role + ": " + s.title));
       card.appendChild(el("div", "mini-org", s.org));
       card.appendChild(el("div", "mini-date", s.date));
       speaking.appendChild(card);
