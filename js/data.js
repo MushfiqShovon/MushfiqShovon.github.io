@@ -10,7 +10,7 @@ const PORTFOLIO = {
   profile: {
     name: "Md Mushfiqur Rahaman",
     shortName: "Mushfiq",
-    tagline: "Ph.D. Student in Industrial Engineering (Data Science)",
+    tagline: "Ph.D. Student in Industrial Engineering (AI/ML)",
     subtagline:
       "Edge AI · Model Quantization · Smart Manufacturing · Industry 4.0",
     location: "Morgantown, WV, USA",
@@ -20,7 +20,7 @@ const PORTFOLIO = {
     resumeAcademic: "assets/docs/CV_Mushfiqur_Rahaman_Academic.pdf",
     resumeProfessional: "assets/docs/CV_Mushfiqur_Rahaman_Professional.pdf",
     about: [
-      "I am a Ph.D. student in Industrial Engineering with a concentration in Data Science at West Virginia University. My research sits at the intersection of efficient deep learning and real-world manufacturing, focusing on real-time edge AI, post-training model quantization, and anomaly/defect detection in additive manufacturing and AI-enabled smart manufacturing systems.",
+      "I am a Ph.D. student in Industrial Engineering with a concentration in AI/ML at West Virginia University. My research sits at the intersection of efficient deep learning and real-world manufacturing, focusing on real-time edge AI, post-training model quantization, and anomaly/defect detection in additive manufacturing and AI-enabled smart manufacturing systems.",
       "Before returning to academia, I spent more than six years leading industrial automation and Industry 4.0 initiatives in FMCG manufacturing at Unilever Bangladesh, Nestlé Bangladesh, and Unipolar Automation Technologies. That industry background — SCADA/PLC systems, OPC/SQL/Azure data pipelines, and plant digitalization — grounds my research in the practical realities of deploying AI on the factory floor.",
       "I hold an M.S. in Applied Mathematics from WVU and a B.Sc. in Electrical and Electronic Engineering from CUET. I enjoy building things that bridge the gap between resource-constrained edge hardware and the models that need to run on them."
     ]
@@ -104,7 +104,7 @@ const PORTFOLIO = {
     {
       date: "Aug 2025",
       type: "milestone",
-      title: "Started my Ph.D. in Industrial Engineering (Data Science) at WVU",
+      title: "Started my Ph.D. in Industrial Engineering (AI/ML) at WVU",
       text: "After completing my M.S. in Applied Mathematics at West Virginia University."
     },
     {
@@ -170,7 +170,7 @@ const PORTFOLIO = {
     {
       school: "West Virginia University",
       location: "Morgantown, WV, USA",
-      degree: "Ph.D. in Industrial Engineering — Concentration: Data Science",
+      degree: "Ph.D. in Industrial Engineering — Concentration: AI/ML",
       period: "Aug 2025 – Present (Expected Aug 2028)"
     },
     {
